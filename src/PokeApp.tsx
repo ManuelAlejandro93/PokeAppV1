@@ -1,4 +1,4 @@
-import { ClickSpark } from '@/reactbits';
+import { ClickSpark } from '@/Reactbits';
 
 export function PokeApp() {
   return (
