@@ -1,2 +1,15 @@
-# PokeAppV1
-This repository contains the "PokeAppV1" Application.
+# Descripción del proyecto
+
+......................
+
+# Captura de pantalla del despliegue
+
+......................
+
+# Link del despliegue funcionando.
+
+......................
+
+# Instrucciones para correr localmente.
+
+......................
