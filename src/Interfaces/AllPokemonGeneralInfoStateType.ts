@@ -1,4 +1,4 @@
-import { SinglePokemonGeneralInfo } from '@/Interfaces';
+import { SinglePokemonSimpleResult } from '@/Interfaces';
 
 export interface AllPokemonGeneralInfoStateType {
   http: {
@@ -6,5 +6,5 @@ export interface AllPokemonGeneralInfoStateType {
     hasError: boolean | null;
     errorMessage: string | null;
   };
-  allPokemons: SinglePokemonGeneralInfo[] | null;
+  allPokemons: SinglePokemonSimpleResult[] | null;
 }

@@ -1,12 +1,21 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
+
+import {
+  AllPokemonSimplelInfoResponse,
+  SinglePokemonSimpleResult
+} from '@/Interfaces';
 
 const url: string = 'https://pokeapi.co/api/v2/pokemon?limit=151';
 
-export const getAllPokemonGeneralInfo = async () => {
+export const getAllPokemonSimpleInfo = async (): Promise<
+  SinglePokemonSimpleResult[] | AxiosError
+> => {
   try {
-    let { data } = await axios.get(url);
-    return data;
+    let {
+      data: { results }
+    } = await axios.get<AllPokemonSimplelInfoResponse>(url);
+    return results;
   } catch (error) {
-    return 'Error en la Api.';
+    throw error;
   }
 };
