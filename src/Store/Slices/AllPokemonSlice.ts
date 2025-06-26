@@ -3,7 +3,7 @@ import { getAllPokemonsThunk } from '../Thunks';
 import { allPokemonStateInitialData as initialState } from '@/Data';
 
 const allPokemonsSlice = createSlice({
-  name: 'all-pokemon-state',
+  name: 'all-pokemon-general-info-state',
   initialState,
   reducers: {},
   extraReducers(builder) {

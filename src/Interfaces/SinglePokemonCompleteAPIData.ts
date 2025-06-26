@@ -1,4 +1,4 @@
-export interface SinglePokemonCompleteData {
+export interface SinglePokemonCompleteAPIData {
   abilities: Ability[];
   base_experience: number;
   cries: Cries;

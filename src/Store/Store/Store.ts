@@ -1,11 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { allPokemonReducer, singlePokemonReducer } from '../Slices';
+import { allPokemonReducer } from '../Slices';
 
 export const store = configureStore({
   reducer: {
-    allPokemons: allPokemonReducer,
-    singlePokemons: singlePokemonReducer
+    allPokemons: allPokemonReducer
   }
 });
 

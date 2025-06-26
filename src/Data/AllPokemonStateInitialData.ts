@@ -1,6 +1,7 @@
-import { AllPokemonStateType } from '@/Interfaces';
+import { AllPokemonGeneralInfoStateType } from '@/Interfaces';
 
-export const allPokemonStateInitialData: AllPokemonStateType = {
-  http: { state: 'pending', hasError: false, errorMessage: null },
-  allPokemons: []
-};
+export const allPokemonGeneralInfoStateInitialData: AllPokemonGeneralInfoStateType =
+  {
+    http: { state: 'pending', hasError: false, errorMessage: null },
+    allPokemons: []
+  };
