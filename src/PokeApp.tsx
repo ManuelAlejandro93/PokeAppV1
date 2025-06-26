@@ -6,7 +6,9 @@ export function PokeApp() {
   return (
     <StoreProvider>
       <CustomClick>
-        <HomePage></HomePage>
+        <HomePage>
+          <h2>ddj</h2>
+        </HomePage>
       </CustomClick>
     </StoreProvider>
   );
