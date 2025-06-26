@@ -14,6 +14,7 @@ export const getAllPokemonSimpleInfo = async (): Promise<
     let {
       data: { results }
     } = await axios.get<AllPokemonSimplelInfoResponse>(url);
+
     return results;
   } catch (error) {
     throw error;
