@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getAllPokemonsThunk } from '../Thunks';
-import { allPokemonStateInitialData as initialState } from '@/Data';
+import { allPokemonGeneralInfoStateInitialData as initialState } from '@/Data';
 
-const allPokemonsSlice = createSlice({
+const allPokemonGeneralInfoSlice = createSlice({
   name: 'all-pokemon-general-info-state',
   initialState,
   reducers: {},
@@ -23,5 +23,5 @@ const allPokemonsSlice = createSlice({
   }
 });
 
-export const {} = allPokemonsSlice.actions;
-export const allPokemonReducer = allPokemonsSlice.reducer;
+export const {} = allPokemonGeneralInfoSlice.actions;
+export const allPokemonReducer = allPokemonGeneralInfoSlice.reducer;
