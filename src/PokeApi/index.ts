@@ -1,2 +1,2 @@
-export * from './GetAllPokemons';
-export * from './GetSinglePokemon';
+export * from './GetAllPokemonsGeneralInfo';
+export * from './GetAllPokemonSpecificInfo';
