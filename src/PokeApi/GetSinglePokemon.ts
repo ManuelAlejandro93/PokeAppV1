@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const url: string = 'https://pokeapi.co/api/v2/pokemon/1/';
-
-export const getSinglePokemon = async () => {
+export const getSinglePokemon = async (pokemonId: number = 1) => {
   try {
-    let { data } = await axios.get(url);
+    let { data } = await axios.get(
+      `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`
+    );
     return data;
   } catch (error) {
     return 'Error en la Api.';
