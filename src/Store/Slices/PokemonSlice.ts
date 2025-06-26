@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getAllPokemonsThunk } from '../Thunks';
 import { allPokemonGeneralInfoStateInitialData as initialState } from '@/Data';
 import { SinglePokemonSimpleResult } from '@/Interfaces';
-import { AxiosError } from 'axios';
 
 const pokemonStateSlice = createSlice({
   name: 'pokemonState',
@@ -26,12 +25,12 @@ const pokemonStateSlice = createSlice({
       })
       .addCase(getAllPokemonsThunk.rejected, (state, action) => {
         //payload-casting
-        const payload = action.payload as unknown as AxiosError;
+        //No necesito
 
         //http-state
         state.http.state = 'rejected';
         state.http.hasError = true;
-        state.http.errorMessage = payload.message;
+        state.http.errorMessage = action.error.message as string;
 
         //all-pokemon-simple-state
         state.allPokemons = [];
