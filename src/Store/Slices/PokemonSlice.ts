@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getAllPokemonsThunk } from '../Thunks';
-import { allPokemonGeneralInfoStateInitialData as initialState } from '@/Data';
+import { pokemonInitialState } from '@/Data';
 import { SinglePokemonSimpleResult } from '@/Interfaces';
 
 const pokemonStateSlice = createSlice({
   name: 'pokemonState',
-  initialState,
+  initialState: pokemonInitialState,
   reducers: {},
   extraReducers(builder) {
     builder

@@ -5,3 +5,6 @@ export * from './AllPokemonSimpleInfoResponseType';
 
 //custom pokemon type
 export * from './CustomSinglePokemonType';
+
+//pagination
+export * from './Pagination';

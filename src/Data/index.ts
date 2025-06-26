@@ -1,1 +1,2 @@
-export * from './AllPokemonStateInitialData';
+export * from './PokemonStateInitialData';
+export * from './Pagination';
