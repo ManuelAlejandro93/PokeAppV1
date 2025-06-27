@@ -13,7 +13,7 @@ export const getAllPokemonSpecificInfo = async (
     });
 
     const allPokemonSpecificData = await Promise.all(promises);
-    console.log(allPokemonSpecificData);
+    return allPokemonSpecificData;
   } catch (error) {
     throw error;
   }
