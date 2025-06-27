@@ -1,23 +1,17 @@
-import { SinglePokemonSimpleResult, CustomSinglePokemon } from '@/Interfaces';
+import {
+  SinglePokemonSimpleResult,
+  CustomSinglePokemon,
+  Http
+} from '@/Interfaces';
 
 export interface PokemonAppState {
-  globalState: {
-    status: 'cheking-on-storage' | 'fulfilled' | 'rejected' | 'pending';
-    hasError: boolean;
-    errorMessage: boolean;
-  };
+  globalState: Http;
 
   simpleData: {
-    status: 'fulfilled' | 'rejected' | 'pending';
-    hasError: boolean;
-    errorMessage: boolean;
     data: null | SinglePokemonSimpleResult[];
-  };
+  } & Http;
 
   specificData: {
-    status: 'fulfilled' | 'rejected' | 'pending';
-    hasError: boolean;
-    errorMessage: boolean;
     data: null | CustomSinglePokemon[] | Array<null | CustomSinglePokemon>;
-  };
+  } & Http;
 }

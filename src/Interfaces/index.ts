@@ -6,3 +6,6 @@ export * from './Store';
 
 //Custom interfaces
 export * from './CustomInterfaces';
+
+//Http interfaces
+export * from './Http';
