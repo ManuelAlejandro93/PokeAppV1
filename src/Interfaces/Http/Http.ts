@@ -6,5 +6,5 @@ export interface Http {
     | 'checking-on-storage'
     | 'non-requested';
   hasError: boolean;
-  errorMessage: boolean;
+  errorMessage: null | string;
 }
