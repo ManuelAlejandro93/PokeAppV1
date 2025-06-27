@@ -13,11 +13,48 @@ const pokemonAppSlice = createSlice({
         action;
       })
       .addCase(getAllPokemonSimpleInfoThunk.rejected, (state, action) => {
-        state;
-        action;
+        //Global app state
+        state.globalState = {
+          status: 'rejected',
+          hasError: true,
+          errorMessage: action.error.message as string
+        };
+        //simple data state
+        state.simpleData = {
+          status: 'rejected',
+          hasError: true,
+          errorMessage: action.error.message as string,
+          data: null
+        };
+        //secific data state
+        state.specificData = {
+          status: 'non-requested',
+          hasError: true,
+          errorMessage: action.error.message as string,
+          data: null
+        };
       })
       .addCase(getAllPokemonSimpleInfoThunk.pending, (state) => {
-        state;
+        //Global app state
+        state.globalState = {
+          status: 'pending',
+          hasError: false,
+          errorMessage: null
+        };
+        //simple data state
+        state.simpleData = {
+          status: 'pending',
+          hasError: false,
+          errorMessage: null,
+          data: null
+        };
+        //secific data state
+        state.specificData = {
+          status: 'non-requested',
+          hasError: false,
+          errorMessage: null,
+          data: null
+        };
       });
   }
 });
