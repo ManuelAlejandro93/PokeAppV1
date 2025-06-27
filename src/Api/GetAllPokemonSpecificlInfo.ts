@@ -1,22 +1,11 @@
-import axios from 'axios';
+import { SinglePokemonSimpleResult } from '@/Interfaces';
 
-import {
-  AllPokemonSimplelInfoResponse,
-  SinglePokemonSimpleResult
-} from '@/Interfaces';
+export const getAllPokemonSpecificInfo = async (
+  pokemons: SinglePokemonSimpleResult[]
+) => {
+  let promises = [];
+  promises = pokemons.map((pokemon) => fetch(pokemon.url));
 
-const url: string = 'https://pokeapi.co/api/v2/pokemon?limit=151';
-
-export const getAllPokemonSimpleInfo = async (): Promise<
-  SinglePokemonSimpleResult[]
-> => {
-  try {
-    let {
-      data: { results }
-    } = await axios.get<AllPokemonSimplelInfoResponse>(url);
-
-    return results;
-  } catch (error) {
-    throw error;
-  }
+  await Promise.all(promises);
+  console.log(promises);
 };
