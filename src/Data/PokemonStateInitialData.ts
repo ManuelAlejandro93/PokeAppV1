@@ -1,6 +1,6 @@
-import { PokemonStateType } from '@/Interfaces';
+import { PokemonAppStateType } from '@/Interfaces';
 
-export const pokemonInitialState: PokemonStateType = {
+export const pokemonInitialState: PokemonAppStateType = {
   http: { state: 'pending', hasError: false, errorMessage: null },
   allPokemons: []
 };

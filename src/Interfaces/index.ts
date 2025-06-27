@@ -1,10 +1,7 @@
 //All pokemon state
+export * from './PokemonAppStateType';
 export * from './GeneralPokemonInfoType';
-export * from './AllPokemonGeneralInfoStateType';
 export * from './AllPokemonSimpleInfoResponseType';
 
 //custom pokemon type
 export * from './CustomSinglePokemonType';
-
-//pagination
-export * from './Pagination';

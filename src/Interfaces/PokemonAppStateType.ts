@@ -1,11 +1,10 @@
-import { SinglePokemonSimpleResult, PaginationState } from '@/Interfaces';
+import { SinglePokemonSimpleResult } from '@/Interfaces';
 
-export interface PokemonStateType {
+export interface PokemonAppStateType {
   http: {
     state: 'fulfilled' | 'rejected' | 'pending';
     hasError: boolean | null;
     errorMessage: string | null;
   };
   allPokemons: SinglePokemonSimpleResult[] | null;
-  pagination: PaginationState;
 }
