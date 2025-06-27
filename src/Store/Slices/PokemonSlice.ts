@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getAllPokemonsThunk } from '../Thunks';
+import { getAllPokemonsSimpleInfoThunk } from '../Thunks';
 import { pokemonInitialState } from '@/Data';
 import { SinglePokemonSimpleResult } from '@/Interfaces';
 
@@ -9,7 +9,7 @@ const pokemonStateSlice = createSlice({
   reducers: {},
   extraReducers(builder) {
     builder
-      .addCase(getAllPokemonsThunk.fulfilled, (state, action) => {
+      .addCase(getAllPokemonsSimpleInfoThunk.fulfilled, (state, action) => {
         //payload-casting
         const payload = [
           ...(action.payload as unknown as SinglePokemonSimpleResult[])
@@ -23,7 +23,7 @@ const pokemonStateSlice = createSlice({
         //all-pokemon-simple-state
         state.allPokemons = [...payload];
       })
-      .addCase(getAllPokemonsThunk.rejected, (state, action) => {
+      .addCase(getAllPokemonsSimpleInfoThunk.rejected, (state, action) => {
         //payload-casting
         //No necesito
 
@@ -35,7 +35,7 @@ const pokemonStateSlice = createSlice({
         //all-pokemon-simple-state
         state.allPokemons = [];
       })
-      .addCase(getAllPokemonsThunk.pending, (state) => {
+      .addCase(getAllPokemonsSimpleInfoThunk.pending, (state) => {
         //payload-casting
         //No necesito
 
