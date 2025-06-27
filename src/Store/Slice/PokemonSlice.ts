@@ -1,5 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getAllPokemonSimpleInfoThunk } from '../Thunks';
+import {
+  getAllPokemonSimpleInfoThunk,
+  getAllPokemonSpecificInfoThunk
+} from '../Thunks';
 import { pokemonInitialState } from '@/Data';
 
 const pokemonAppSlice = createSlice({
@@ -11,7 +14,7 @@ const pokemonAppSlice = createSlice({
       .addCase(getAllPokemonSimpleInfoThunk.fulfilled, (state, action) => {
         //Global app state
         state.globalState = {
-          status: 'fulfilled'
+          status: 'pending'
         };
         //simple data state
         state.simpleData = {
@@ -67,6 +70,18 @@ const pokemonAppSlice = createSlice({
           errorMessage: null,
           data: null
         };
+      })
+      .addCase(getAllPokemonSpecificInfoThunk.fulfilled, (state, action) => {
+        console.log('Estoy en getAllPokemonSpecificInfoThunk - fulfilled');
+        console.log(action.payload);
+      })
+      .addCase(getAllPokemonSpecificInfoThunk.rejected, (state, action) => {
+        console.log('Estoy en getAllPokemonSpecificInfoThunk - rejected');
+        console.log('Error: ');
+        console.log(action.error.message);
+      })
+      .addCase(getAllPokemonSpecificInfoThunk.pending, (state) => {
+        console.log('Estoy en getAllPokemonSpecificInfoThunk - pending');
       });
   }
 });
