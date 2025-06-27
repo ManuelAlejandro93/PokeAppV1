@@ -9,8 +9,26 @@ const pokemonAppSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(getAllPokemonSimpleInfoThunk.fulfilled, (state, action) => {
-        state;
-        action;
+        //Global app state
+        state.globalState = {
+          status: 'fulfilled',
+          hasError: false,
+          errorMessage: null
+        };
+        //simple data state
+        state.simpleData = {
+          status: 'fulfilled',
+          hasError: false,
+          errorMessage: null,
+          data: action.payload
+        };
+        //secific data state
+        state.specificData = {
+          status: 'non-requested',
+          hasError: false,
+          errorMessage: null,
+          data: null
+        };
       })
       .addCase(getAllPokemonSimpleInfoThunk.rejected, (state, action) => {
         //Global app state
