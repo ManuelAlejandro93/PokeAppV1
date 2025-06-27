@@ -6,5 +6,3 @@ export * from './Store';
 
 //Custom interfaces
 export * from './CustomInterfaces';
-
-//todo: examinar esta mondá.
