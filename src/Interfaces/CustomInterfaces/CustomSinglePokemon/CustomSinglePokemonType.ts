@@ -15,7 +15,7 @@ export interface CustomSinglePokemon {
   salud_base_valor: number;
   defensa_base_valor: number;
   ataque_base_valor: number;
-  defensa_especial_base_valor: number;
-  ataque_especial_base_valor: number;
+  defensa_especial_valor: number;
+  ataque_especial_valor: number;
   velocidad: number;
 }
