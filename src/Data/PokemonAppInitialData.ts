@@ -2,9 +2,7 @@ import { PokemonAppState } from '@/Interfaces';
 
 export const pokemonInitialState: PokemonAppState = {
   globalState: {
-    status: 'pending',
-    hasError: false,
-    errorMessage: null
+    status: 'pending'
   },
   simpleData: {
     status: 'non-requested',

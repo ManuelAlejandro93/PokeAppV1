@@ -11,9 +11,7 @@ const pokemonAppSlice = createSlice({
       .addCase(getAllPokemonSimpleInfoThunk.fulfilled, (state, action) => {
         //Global app state
         state.globalState = {
-          status: 'fulfilled',
-          hasError: false,
-          errorMessage: null
+          status: 'fulfilled'
         };
         //simple data state
         state.simpleData = {
@@ -33,9 +31,7 @@ const pokemonAppSlice = createSlice({
       .addCase(getAllPokemonSimpleInfoThunk.rejected, (state, action) => {
         //Global app state
         state.globalState = {
-          status: 'rejected',
-          hasError: true,
-          errorMessage: action.error.message as string
+          status: 'rejected'
         };
         //simple data state
         state.simpleData = {
@@ -55,9 +51,7 @@ const pokemonAppSlice = createSlice({
       .addCase(getAllPokemonSimpleInfoThunk.pending, (state) => {
         //Global app state
         state.globalState = {
-          status: 'pending',
-          hasError: false,
-          errorMessage: null
+          status: 'pending'
         };
         //simple data state
         state.simpleData = {

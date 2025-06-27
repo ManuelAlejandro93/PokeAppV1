@@ -5,6 +5,6 @@ export interface Http {
     | 'pending'
     | 'checking-on-storage'
     | 'non-requested';
-  hasError: boolean;
-  errorMessage: null | string;
+  hasError?: boolean;
+  errorMessage?: null | string;
 }
