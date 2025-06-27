@@ -1,1 +1,1 @@
-export * from './PokemonAppStateType';
+export * from './PokemonAppState';
