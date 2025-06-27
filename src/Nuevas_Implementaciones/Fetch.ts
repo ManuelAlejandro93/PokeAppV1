@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { SinglePokemonSimpleInfo } from '@/Interfaces';
+import { SinglePokemonSimpleResult } from '@/Interfaces';
 
 export const getAllPokemonSpecificInfo = async (
-  pokemonArray: SinglePokemonSimpleInfo[]
+  pokemonArray: SinglePokemonSimpleResult[]
 ) => {
   let promiseArray = [];
 
