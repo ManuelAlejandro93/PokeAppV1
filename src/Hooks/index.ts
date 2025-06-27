@@ -1,1 +1,1 @@
-export * from './useFetchAllPokemonSimpleInfoHook';
+export * from './useFetchAllPokemonInfoHook';
