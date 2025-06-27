@@ -1,4 +1,4 @@
 export * from './Store';
-export * from './Slices';
+export * from './Slice';
 export * from './Provider';
 export * from './Thunks';
