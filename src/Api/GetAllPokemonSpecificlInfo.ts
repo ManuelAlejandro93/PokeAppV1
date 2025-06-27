@@ -1,7 +1,12 @@
 import { SinglePokemonSimpleResult } from '@/Interfaces';
 
 export const getAllPokemonSpecificInfo = async (
-  pokemons: SinglePokemonSimpleResult[]
+  pokemons: SinglePokemonSimpleResult[] = [
+    {
+      name: 'bulbasour',
+      url: 'https://pokeapi.co/api/v2/pokemon/1/'
+    }
+  ]
 ) => {
   try {
     const promises = pokemons.map(async (pokemon) => {
