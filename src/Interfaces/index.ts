@@ -1,14 +1,10 @@
 //Api interfaces
 export * from './Api';
 
+//Store interfaces
+export * from './Store';
+
 //Custom interfaces
 export * from './CustomInterfaces';
 
 //todo: examinar esta mondá.
-//All pokemon state
-export * from './PokemonAppStateType';
-export * from './GeneralPokemonInfoType';
-
-//custom pokemon type
-export * from './CustomInterfaces/CustomSinglePokemon/CustomSinglePokemonType';
-export * from './Api/SinglePokemonSingleResult';
