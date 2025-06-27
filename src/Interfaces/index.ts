@@ -5,3 +5,4 @@ export * from './AllPokemonSimpleInfoResponseType';
 
 //custom pokemon type
 export * from './CustomSinglePokemonType';
+export * from './SinglePokemonSingleResponse';

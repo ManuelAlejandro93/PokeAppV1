@@ -1,1 +1,1 @@
-export * from './PokemonStateInitialData';
+export * from './PokemonAppInitialData';
