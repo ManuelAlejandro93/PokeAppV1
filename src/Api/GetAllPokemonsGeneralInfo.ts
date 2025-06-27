@@ -5,7 +5,7 @@ import {
   SinglePokemonSimpleResult
 } from '@/Interfaces';
 
-const url: string = 'https://pokeapi.co/api/v25/pokemon?limit=151';
+const url: string = 'https://pokeapi.co/api/v2/pokemon?limit=151';
 
 export const getAllPokemonSimpleInfo = async (): Promise<
   SinglePokemonSimpleResult[]
