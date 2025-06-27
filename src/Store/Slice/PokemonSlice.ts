@@ -72,15 +72,20 @@ const pokemonAppSlice = createSlice({
         };
       })
       .addCase(getAllPokemonSpecificInfoThunk.fulfilled, (state, action) => {
+        state;
+        action;
         console.log('Estoy en getAllPokemonSpecificInfoThunk - fulfilled');
         console.log(action.payload);
       })
       .addCase(getAllPokemonSpecificInfoThunk.rejected, (state, action) => {
+        state;
+        action;
         console.log('Estoy en getAllPokemonSpecificInfoThunk - rejected');
         console.log('Error: ');
         console.log(action.error.message);
       })
       .addCase(getAllPokemonSpecificInfoThunk.pending, (state) => {
+        state;
         console.log('Estoy en getAllPokemonSpecificInfoThunk - pending');
       });
   }
