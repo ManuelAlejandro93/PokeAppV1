@@ -3,8 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   RootState,
   getAllPokemonSimpleInfoThunk,
-  getAllPokemonSpecificInfoThunk
+  getAllPokemonSpecificInfoThunk,
+  store
 } from '@/Store';
+
+import { SinglePokemonSimpleResult } from '@/Interfaces';
 
 export const useFetchAllPokemonInfoHook = () => {
   const simpleDataHttpStatus = useSelector(
@@ -21,11 +24,14 @@ export const useFetchAllPokemonInfoHook = () => {
   //Efecto que se dispara al cambiar el "simpleDataHttpStatus".
   useEffect(() => {
     if (simpleDataHttpStatus === 'fulfilled') {
+      const lastStoreState = store.getState();
+      const currentAllPokemonSimpleInfo =
+        lastStoreState.pokemonAppReducer.simpleData.data;
+
       dispatch<any>(
-        getAllPokemonSpecificInfoThunk([
-          { name: 'bulbasaur', url: 'https://pokeapi.co/api/v2/pokemon/1/' },
-          { name: 'ivysaur', url: 'https://pokeapi.co/api/v2/pokemon/2/' }
-        ])
+        getAllPokemonSpecificInfoThunk(
+          currentAllPokemonSimpleInfo as SinglePokemonSimpleResult[]
+        )
       );
     }
   }, [simpleDataHttpStatus]);
