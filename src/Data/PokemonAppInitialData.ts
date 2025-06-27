@@ -19,3 +19,4 @@ export const pokemonInitialState: PokemonAppState = {
     data: null
   }
 };
+//
