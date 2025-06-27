@@ -3,30 +3,23 @@ import { getAllPokemonsSimpleInfoThunk } from '../Thunks';
 import { pokemonInitialState } from '@/Data';
 import { SinglePokemonSimpleResult } from '@/Interfaces';
 
-const pokemonStateSlice = createSlice({
-  name: 'pokemonState',
+const pokemonAppSlice = createSlice({
+  name: 'pokemonAppState',
   initialState: pokemonInitialState,
   reducers: {},
   extraReducers(builder) {
     builder
       .addCase(getAllPokemonsSimpleInfoThunk.fulfilled, (state, action) => {
-        //payload-casting
-        const payload = [
-          ...(action.payload as unknown as SinglePokemonSimpleResult[])
-        ];
-
         //http-state
         state.http.state = 'fulfilled';
         state.http.hasError = false;
         state.http.errorMessage = null;
 
         //all-pokemon-simple-state
-        state.allPokemons = [...payload];
+        state.allPokemons =
+          action.payload as unknown as SinglePokemonSimpleResult[];
       })
       .addCase(getAllPokemonsSimpleInfoThunk.rejected, (state, action) => {
-        //payload-casting
-        //No necesito
-
         //http-state
         state.http.state = 'rejected';
         state.http.hasError = true;
@@ -36,9 +29,6 @@ const pokemonStateSlice = createSlice({
         state.allPokemons = [];
       })
       .addCase(getAllPokemonsSimpleInfoThunk.pending, (state) => {
-        //payload-casting
-        //No necesito
-
         //http-state
         state.http.state = 'pending';
         state.http.hasError = false;
@@ -50,5 +40,5 @@ const pokemonStateSlice = createSlice({
   }
 });
 
-export const {} = pokemonStateSlice.actions;
-export const allPokemonReducer = pokemonStateSlice.reducer;
+export const {} = pokemonAppSlice.actions;
+export const pokemonAppReducer = pokemonAppSlice.reducer;
