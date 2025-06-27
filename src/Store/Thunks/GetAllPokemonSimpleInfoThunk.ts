@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getAllPokemonSimpleInfo } from '@/Api';
 
-export const getAllPokemonsSimpleInfoThunk = createAsyncThunk(
-  'pokemon/get-all-pokemons-simple-info-thunk',
+export const getAllPokemonSimpleInfoThunk = createAsyncThunk(
+  'pokemon/get-all-pokemon-simple-info-thunk',
   getAllPokemonSimpleInfo
 );
