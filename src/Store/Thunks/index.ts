@@ -1,1 +1,1 @@
-export * from './GetAllPokemonsThunk';
+export * from './GetAllPokemonSimpleInfoThunk';

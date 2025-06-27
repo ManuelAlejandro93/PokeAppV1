@@ -1,13 +1,13 @@
 import { StoreProvider } from '@/Store';
-import { CustomClick } from '@/UI';
+import { CustomClick as CustomClickContext } from '@/UI';
 import { HomePage } from '@/Pages';
 
 export function PokeApp() {
   return (
     <StoreProvider>
-      <CustomClick>
+      <CustomClickContext>
         <HomePage />
-      </CustomClick>
+      </CustomClickContext>
     </StoreProvider>
   );
 }
