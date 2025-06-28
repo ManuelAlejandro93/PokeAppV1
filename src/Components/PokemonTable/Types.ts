@@ -1,3 +1,5 @@
+//Aquí se van a guardar las interfaces que unicamente se van a usar en la tabla.
+
 export interface CustomSinglePokemon {
   nombre: string;
   foto: string;
@@ -23,3 +25,8 @@ export interface CustomSinglePokemon {
 export type TipoSeleccionado = 'tipo1' | 'tipo2';
 
 export type DireccionOrden = 'asc' | 'desc';
+
+export interface PokemonTableProps {
+  data: CustomSinglePokemon[];
+  isLoading?: boolean;
+}
