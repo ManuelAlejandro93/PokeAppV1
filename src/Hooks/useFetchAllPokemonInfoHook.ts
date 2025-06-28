@@ -25,6 +25,7 @@ export const useFetchAllPokemonInfoHook = () => {
   useEffect(() => {
     if (simpleDataHttpStatus === 'fulfilled') {
       const lastStoreState = store.getState();
+
       const currentAllPokemonSimpleInfo =
         lastStoreState.pokemonAppReducer.simpleData.data;
 

@@ -21,10 +21,12 @@ export const getAllPokemonSpecificInfo = async (
     });
 
     const fullApiAllPokemonInfo = await Promise.all(promises);
-    const customAllPokemonInfo = customTypeMakerFn(fullApiAllPokemonInfo);
 
+    const customAllPokemonInfo = customTypeMakerFn(fullApiAllPokemonInfo);
     return customAllPokemonInfo;
   } catch (error) {
+    console.log(error);
+
     throw error;
   }
 };
