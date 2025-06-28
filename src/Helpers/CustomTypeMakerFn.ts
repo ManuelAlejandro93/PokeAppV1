@@ -10,7 +10,7 @@ export const customTypeMakerFn = (
         nombre: pokemon.types[0]?.type.name
       },
       tipo2: {
-        nombre: pokemon.types[0]?.type.name
+        nombre: pokemon.types[1]?.type.name || 'sin tipo 2 definido'
       }
     },
     id: pokemon.id,
