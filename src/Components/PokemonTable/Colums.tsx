@@ -90,5 +90,103 @@ export const obtenerColumnas = (
         </div>
       );
     }
+  },
+
+  // COLUMNA 6: Salud
+  {
+    accessorKey: 'salud_base_valor',
+    header: 'Salud',
+    enableSorting: true,
+    cell: ({ getValue }) => {
+      const valor = getValue() as number;
+      return (
+        <div className='flex items-center justify-center h-full'>
+          <span className={obtenerColorStat(valor)}>{valor}</span>
+        </div>
+      );
+    }
+  },
+  // COLUMNA 7: Ataque Base
+  {
+    accessorKey: 'ataque_base_valor',
+    header: 'Ataque Base',
+    enableSorting: true,
+    cell: ({ getValue }) => {
+      const valor = getValue() as number;
+      return (
+        <div className='flex items-center justify-center h-full'>
+          <span className={obtenerColorStat(valor)}>{valor}</span>
+        </div>
+      );
+    }
+  },
+  // COLUMNA 8: Defensa Base
+  {
+    accessorKey: 'defensa_base_valor',
+    header: 'Defensa Base',
+    enableSorting: true,
+    cell: ({ getValue }) => {
+      const valor = getValue() as number;
+      return (
+        <div className='flex items-center justify-center h-full'>
+          <span className={obtenerColorStat(valor)}>{valor}</span>
+        </div>
+      );
+    }
+  },
+  // COLUMNA 9: Ataque Especial
+  {
+    accessorKey: 'ataque_especial_valor',
+    header: 'Ataque Especial',
+    enableSorting: true,
+    cell: ({ getValue }) => {
+      const valor = getValue() as number;
+      return (
+        <div className='flex items-center justify-center h-full'>
+          <span className={obtenerColorStat(valor)}>{valor}</span>
+        </div>
+      );
+    }
+  },
+  // COLUMNA 10: Defensa Especial
+  {
+    accessorKey: 'defensa_especial_valor',
+    header: 'Defensa Especial',
+    enableSorting: true,
+    cell: ({ getValue }) => {
+      const valor = getValue() as number;
+      return (
+        <div className='flex items-center justify-center h-full'>
+          <span className={obtenerColorStat(valor)}>{valor}</span>
+        </div>
+      );
+    }
+  },
+  // COLUMNA 11: Velocidad
+  {
+    accessorKey: 'velocidad',
+    header: 'Velocidad',
+    enableSorting: true,
+    cell: ({ getValue }) => {
+      const valor = getValue() as number;
+      return (
+        <div className='flex items-center justify-center h-full'>
+          <span className={obtenerColorStat(valor)}>{valor}</span>
+        </div>
+      );
+    }
+  },
+  // COLUMNA 12: Ver Más
+  {
+    id: 'ver-mas',
+    header: 'Ver Más',
+    enableSorting: false, // No se puede ordenar
+    cell: () => (
+      <div className='flex items-center justify-center h-full'>
+        <div className='p-2 hover:opacity-80 cursor-pointer transition-opacity'>
+          <Eye className='w-6 h-6' />
+        </div>
+      </div>
+    )
   }
 ];
