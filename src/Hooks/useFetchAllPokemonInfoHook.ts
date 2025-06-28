@@ -16,12 +16,12 @@ export const useFetchAllPokemonInfoHook = () => {
   const simpleDataHttpStatus = useSelector(
     (state: RootState) => state.pokemonAppReducer.simpleData.status
   );
-  const isSpecificAllPokemonDataLoading = useSelector(
+  const isSpecificDataLoading = useSelector(
     (state: RootState) => state.pokemonAppReducer.specificData.status
   );
 
   const specificAllPokemonData = useSelector(
-    (state: RootState) => state.pokemonAppReducer.specificData.status
+    (state: RootState) => state.pokemonAppReducer.specificData.data
   );
 
   const dispatch = useDispatch();
@@ -57,4 +57,13 @@ export const useFetchAllPokemonInfoHook = () => {
       );
     }
   }, [simpleDataHttpStatus]);
+
+  return {
+    specificAllPokemonData,
+    isSpecificDataLoading:
+      isSpecificDataLoading === 'checking-on-storage' ||
+      isSpecificDataLoading === 'pending'
+        ? true
+        : false
+  };
 };
