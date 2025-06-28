@@ -8,7 +8,7 @@ import {
   SortingState
 } from '@tanstack/react-table';
 import { ChevronUp, ChevronDown } from 'lucide-react';
-import { Skeleton } from '@/shadcn/ui/skeleton';
+import { Skeleton } from '@/Shadcn/components/ui/skeleton';
 import { TipoSeleccionado, PokemonTableProps } from './Types';
 import { obtenerColumnas } from './Colums';
 
