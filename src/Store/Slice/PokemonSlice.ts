@@ -1,14 +1,36 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
   getAllPokemonSimpleInfoThunk,
   getAllPokemonSpecificInfoThunk
 } from '../Thunks';
 import { pokemonInitialState } from '@/Data';
+import { CustomSinglePokemon } from '@/Interfaces';
 
 const pokemonAppSlice = createSlice({
   name: 'pokemonAppState',
   initialState: pokemonInitialState,
-  reducers: {},
+  reducers: {
+    onSavedOnLocalStorage(state, action: PayloadAction<CustomSinglePokemon[]>) {
+      //Global app state
+      state.globalState = {
+        status: 'saved-on-local-storage'
+      };
+      //simple data state
+      state.simpleData = {
+        status: 'saved-on-local-storage',
+        hasError: false,
+        errorMessage: null,
+        data: null /* Como tengo la data especifica. No necesito esta info */
+      };
+      //secific data state
+      state.specificData = {
+        status: 'saved-on-local-storage',
+        hasError: false,
+        errorMessage: null,
+        data: action.payload
+      };
+    }
+  },
   extraReducers(builder) {
     builder
       .addCase(getAllPokemonSimpleInfoThunk.fulfilled, (state, action) => {
@@ -122,5 +144,5 @@ const pokemonAppSlice = createSlice({
   }
 });
 
-export const {} = pokemonAppSlice.actions;
+export const { onSavedOnLocalStorage } = pokemonAppSlice.actions;
 export const pokemonAppReducer = pokemonAppSlice.reducer;

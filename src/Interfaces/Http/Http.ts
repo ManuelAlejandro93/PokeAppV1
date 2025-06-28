@@ -4,7 +4,8 @@ export interface Http {
     | 'rejected'
     | 'pending'
     | 'checking-on-storage'
-    | 'non-requested';
+    | 'non-requested'
+    | 'saved-on-local-storage';
   hasError?: boolean;
   errorMessage?: null | string;
 }

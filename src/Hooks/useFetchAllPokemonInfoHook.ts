@@ -4,21 +4,33 @@ import {
   RootState,
   getAllPokemonSimpleInfoThunk,
   getAllPokemonSpecificInfoThunk,
+  onSavedOnLocalStorage,
   store
 } from '@/Store';
 
 import { SinglePokemonSimpleResult } from '@/Interfaces';
 
+import { searchOnLs } from '@/Helpers';
+
 export const useFetchAllPokemonInfoHook = () => {
   const simpleDataHttpStatus = useSelector(
     (state: RootState) => state.pokemonAppReducer.simpleData.status
   );
-
   const dispatch = useDispatch();
-
-  //Efecto que se dispara al montar la página.
+  // Efecto que se dispara al montar la página.
   useEffect(() => {
-    dispatch<any>(getAllPokemonSimpleInfoThunk());
+    if (simpleDataHttpStatus === 'pending') {
+      //buscar en localStorage
+      const pokemonInfoOnLocalStorage = searchOnLs();
+
+      if (!pokemonInfoOnLocalStorage || pokemonInfoOnLocalStorage === null) {
+        //despacho la async axn
+        dispatch<any>(getAllPokemonSimpleInfoThunk());
+      } else {
+        //despacho la función sincrona
+        dispatch<any>(onSavedOnLocalStorage(pokemonInfoOnLocalStorage));
+      }
+    }
   }, []);
 
   //Efecto que se dispara al cambiar el "simpleDataHttpStatus".
