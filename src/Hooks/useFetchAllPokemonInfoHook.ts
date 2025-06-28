@@ -16,6 +16,14 @@ export const useFetchAllPokemonInfoHook = () => {
   const simpleDataHttpStatus = useSelector(
     (state: RootState) => state.pokemonAppReducer.simpleData.status
   );
+  const isSpecificAllPokemonDataLoading = useSelector(
+    (state: RootState) => state.pokemonAppReducer.specificData.status
+  );
+
+  const specificAllPokemonData = useSelector(
+    (state: RootState) => state.pokemonAppReducer.specificData.status
+  );
+
   const dispatch = useDispatch();
   // Efecto que se dispara al montar la página.
 
