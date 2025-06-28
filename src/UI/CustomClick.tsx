@@ -9,9 +9,9 @@ export const CustomClick = ({ children }: CustomClickProps): ReactNode => {
   return (
     <ClickSpark
       sparkColor='#EFBF04'
-      sparkSize={10}
-      sparkRadius={20}
-      sparkCount={8}
+      sparkSize={50}
+      sparkRadius={50}
+      sparkCount={20}
       duration={400}
     >
       {children}
