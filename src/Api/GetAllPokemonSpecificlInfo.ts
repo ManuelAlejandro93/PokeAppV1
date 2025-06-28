@@ -1,4 +1,5 @@
 import { SinglePokemonSimpleResult } from '@/Interfaces';
+import { customTypeMakerFn } from '@/Helpers';
 
 export const getAllPokemonSpecificInfo = async (
   pokemons: SinglePokemonSimpleResult[] = [
@@ -19,8 +20,10 @@ export const getAllPokemonSpecificInfo = async (
       return response.json();
     });
 
-    const allPokemonSpecificData = await Promise.all(promises);
-    return allPokemonSpecificData;
+    const fullApiAllPokemonInfo = await Promise.all(promises);
+    const customAllPokemonInfo = customTypeMakerFn(fullApiAllPokemonInfo);
+
+    return customAllPokemonInfo;
   } catch (error) {
     throw error;
   }
