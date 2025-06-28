@@ -72,21 +72,52 @@ const pokemonAppSlice = createSlice({
         };
       })
       .addCase(getAllPokemonSpecificInfoThunk.fulfilled, (state, action) => {
-        state;
-        action;
-        console.log('Estoy en getAllPokemonSpecificInfoThunk - fulfilled');
-        console.log(action.payload);
+        //Global app state
+        state.globalState = {
+          status: 'fulfilled'
+        };
+        //simple data state
+        //No hago nada.
+
+        //specific data state
+        state.specificData = {
+          status: 'fulfilled',
+          hasError: false,
+          errorMessage: null,
+          data: action.payload
+        };
       })
       .addCase(getAllPokemonSpecificInfoThunk.rejected, (state, action) => {
-        state;
-        action;
-        console.log('Estoy en getAllPokemonSpecificInfoThunk - rejected');
-        console.log('Error: ');
-        console.log(action.error.message);
+        //Global app state
+        state.globalState = {
+          status: 'rejected'
+        };
+        //simple data state
+        //No hago nada.
+
+        //specific data state
+        state.specificData = {
+          status: 'rejected',
+          hasError: true,
+          errorMessage: action.error.message,
+          data: []
+        };
       })
       .addCase(getAllPokemonSpecificInfoThunk.pending, (state) => {
-        state;
-        console.log('Estoy en getAllPokemonSpecificInfoThunk - pending');
+        //Global app state
+        state.globalState = {
+          status: 'pending'
+        };
+        //simple data state
+        //No hago nada.
+
+        //specific data state
+        state.specificData = {
+          status: 'pending',
+          hasError: false,
+          errorMessage: null,
+          data: null
+        };
       });
   }
 });
