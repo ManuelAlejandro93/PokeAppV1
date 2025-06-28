@@ -12,7 +12,7 @@ import { SinglePokemonSimpleResult } from '@/Interfaces';
 
 import { searchOnLocalStorage } from '@/Helpers';
 
-export const useFetchAllPokemonInfoHook = async () => {
+export const useFetchAllPokemonInfoHook = () => {
   const simpleDataHttpStatus = useSelector(
     (state: RootState) => state.pokemonAppReducer.simpleData.status
   );
