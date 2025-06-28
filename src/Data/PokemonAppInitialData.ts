@@ -5,13 +5,13 @@ export const pokemonInitialState: PokemonAppState = {
     status: 'pending'
   },
   simpleData: {
-    status: 'non-requested',
+    status: 'pending',
     hasError: false,
     errorMessage: null,
     data: null
   },
   specificData: {
-    status: 'non-requested',
+    status: 'pending',
     hasError: false,
     errorMessage: null,
     data: null

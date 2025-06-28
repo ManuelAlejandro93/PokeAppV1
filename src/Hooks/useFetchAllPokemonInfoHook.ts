@@ -12,12 +12,13 @@ import { SinglePokemonSimpleResult } from '@/Interfaces';
 
 import { searchOnLocalStorage } from '@/Helpers';
 
-export const useFetchAllPokemonInfoHook = () => {
+export const useFetchAllPokemonInfoHook = async () => {
   const simpleDataHttpStatus = useSelector(
     (state: RootState) => state.pokemonAppReducer.simpleData.status
   );
   const dispatch = useDispatch();
   // Efecto que se dispara al montar la página.
+
   useEffect(() => {
     if (simpleDataHttpStatus === 'pending') {
       //buscar en localStorage

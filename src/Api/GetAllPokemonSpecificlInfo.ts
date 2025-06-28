@@ -1,5 +1,5 @@
 import { SinglePokemonSimpleResult } from '@/Interfaces';
-import { customTypeMakerFn } from '@/Helpers';
+import { customTypeMakerFn, saveOnLocalStorage } from '@/Helpers';
 
 export const getAllPokemonSpecificInfo = async (
   pokemons: SinglePokemonSimpleResult[] = [
@@ -25,6 +25,7 @@ export const getAllPokemonSpecificInfo = async (
     const customAllPokemonInfo = customTypeMakerFn(fullApiAllPokemonInfo);
 
     //guardar información en local storage
+    saveOnLocalStorage(customAllPokemonInfo);
 
     return customAllPokemonInfo;
   } catch (error) {
