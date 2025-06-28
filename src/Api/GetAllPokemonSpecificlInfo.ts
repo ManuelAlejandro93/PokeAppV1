@@ -25,6 +25,7 @@ export const getAllPokemonSpecificInfo = async (
     const customAllPokemonInfo = customTypeMakerFn(fullApiAllPokemonInfo);
 
     //guardar información en local storage
+
     return customAllPokemonInfo;
   } catch (error) {
     console.log(error);

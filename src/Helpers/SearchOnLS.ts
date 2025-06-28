@@ -1,5 +1,5 @@
 import { CustomSinglePokemon } from '@/Interfaces';
-export const searchOnLs = (): CustomSinglePokemon[] | null => {
+export const searchOnLocalStorage = (): CustomSinglePokemon[] | null => {
   const pokemonsOnLS = localStorage.getItem('all-pokemon-custom-specific-data');
   if (!pokemonsOnLS || pokemonsOnLS === null) {
     return null;

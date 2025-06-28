@@ -10,7 +10,7 @@ import {
 
 import { SinglePokemonSimpleResult } from '@/Interfaces';
 
-import { searchOnLs } from '@/Helpers';
+import { searchOnLocalStorage } from '@/Helpers';
 
 export const useFetchAllPokemonInfoHook = () => {
   const simpleDataHttpStatus = useSelector(
@@ -21,7 +21,7 @@ export const useFetchAllPokemonInfoHook = () => {
   useEffect(() => {
     if (simpleDataHttpStatus === 'pending') {
       //buscar en localStorage
-      const pokemonInfoOnLocalStorage = searchOnLs();
+      const pokemonInfoOnLocalStorage = searchOnLocalStorage();
 
       if (!pokemonInfoOnLocalStorage || pokemonInfoOnLocalStorage === null) {
         //despacho la async axn
