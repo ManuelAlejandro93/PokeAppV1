@@ -27,6 +27,9 @@ const pokemonAppSlice = createSlice({
     closePokemonModal: (state) => {
       state.modalState.isModalOpen = false;
     },
+    clearModalContent: (state) => {
+      state.modalState.modalContent = null;
+    },
 
     onSavedOnLocalStorage(state, action: PayloadAction<CustomSinglePokemon[]>) {
       //Global app state
@@ -162,5 +165,10 @@ const pokemonAppSlice = createSlice({
   }
 });
 
-export const { onSavedOnLocalStorage } = pokemonAppSlice.actions;
+export const {
+  onSavedOnLocalStorage,
+  clearModalContent,
+  closePokemonModal,
+  openPokemonModal
+} = pokemonAppSlice.actions;
 export const pokemonAppReducer = pokemonAppSlice.reducer;
