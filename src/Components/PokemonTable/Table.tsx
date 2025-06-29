@@ -100,6 +100,7 @@ export const PokemonTable = ({
         {/* Información de paginación */}
         <div className='text-sm text-gray-600'>
           Mostrando {table.getRowModel().rows.length} de {data.length} pokémon
+          Mostrando {table.getRowModel().rows.length} de {data.length} pokémon
         </div>
 
         {/* Selector de tipo para la columna especial */}

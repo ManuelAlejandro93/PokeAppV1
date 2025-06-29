@@ -3,7 +3,7 @@ import { PokemonTable } from '@/Components';
 import { CustomSinglePokemon } from '@/Interfaces';
 
 export const HomePage = () => {
-  const { specificAllPokemonData, isSpecificDataLoading } =
+  const { isSpecificDataLoading, specificAllPokemonData } =
     useFetchAllPokemonInfoHook();
 
   return (

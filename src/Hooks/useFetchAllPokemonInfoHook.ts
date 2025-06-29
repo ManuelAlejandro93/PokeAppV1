@@ -16,7 +16,7 @@ export const useFetchAllPokemonInfoHook = () => {
   const simpleDataHttpStatus = useSelector(
     (state: RootState) => state.pokemonAppReducer.simpleData.status
   );
-  const isSpecificDataLoading = useSelector(
+  const specificDataStatus = useSelector(
     (state: RootState) => state.pokemonAppReducer.specificData.status
   );
 
@@ -25,8 +25,8 @@ export const useFetchAllPokemonInfoHook = () => {
   );
 
   const dispatch = useDispatch();
-  // Efecto que se dispara al montar la página.
 
+  // Efecto que se dispara al montar la página.
   useEffect(() => {
     if (simpleDataHttpStatus === 'pending') {
       //buscar en localStorage
@@ -58,12 +58,12 @@ export const useFetchAllPokemonInfoHook = () => {
     }
   }, [simpleDataHttpStatus]);
 
+  const isSpecificDataLoading =
+    specificDataStatus === 'pending' ||
+    specificDataStatus === 'checking-on-storage';
+
   return {
-    specificAllPokemonData,
-    isSpecificDataLoading:
-      isSpecificDataLoading === 'checking-on-storage' ||
-      isSpecificDataLoading === 'pending'
-        ? true
-        : false
+    isSpecificDataLoading,
+    specificAllPokemonData
   };
 };
