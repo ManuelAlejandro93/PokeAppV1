@@ -1,2 +1,2 @@
 export * from './useFetchAllPokemonInfoHook';
-export * from './useNewHook';
+export * from './usePokemonModalHook';
