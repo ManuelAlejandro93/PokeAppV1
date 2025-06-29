@@ -8,14 +8,10 @@ import {
   SortingState
 } from '@tanstack/react-table';
 import { ChevronUp, ChevronDown } from 'lucide-react';
-import { Skeleton } from '@/Shadcn/components/ui/skeleton';
 import { TipoSeleccionado, PokemonTableProps } from './Types';
 import { obtenerColumnas } from './Colums';
 
-export const PokemonTable = ({
-  data,
-  isLoading = false
-}: PokemonTableProps) => {
+export const PokemonTable = ({ data }: PokemonTableProps) => {
   // Estado para el ordenamiento (inicia ordenado por ID ascendente)
   const [sorting, setSorting] = useState<SortingState>([
     { id: 'id', desc: false }
@@ -77,21 +73,6 @@ export const PokemonTable = ({
       }));
     }
   };
-  // Si está cargando, mostrar skeleton
-  if (isLoading) {
-    return (
-      <div className='w-full p-4'>
-        <div className='space-y-2'>
-          {[...Array(10)].map((_, i) => (
-            <Skeleton
-              key={i}
-              className='h-[200px] w-full'
-            />
-          ))}
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className='w-full p-4'>

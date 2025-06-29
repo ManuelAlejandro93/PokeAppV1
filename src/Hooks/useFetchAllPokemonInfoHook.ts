@@ -12,16 +12,9 @@ import { SinglePokemonSimpleResult } from '@/Interfaces';
 
 import { searchOnLocalStorage } from '@/Helpers';
 
-export const useFetchAllPokemonInfoHook = () => {
+export const useGetAllPokemonInfoHook = () => {
   const simpleDataHttpStatus = useSelector(
     (state: RootState) => state.pokemonAppReducer.simpleData.status
-  );
-  const specificDataStatus = useSelector(
-    (state: RootState) => state.pokemonAppReducer.specificData.status
-  );
-
-  const specificAllPokemonData = useSelector(
-    (state: RootState) => state.pokemonAppReducer.specificData.data
   );
 
   const dispatch = useDispatch();
@@ -58,12 +51,5 @@ export const useFetchAllPokemonInfoHook = () => {
     }
   }, [simpleDataHttpStatus]);
 
-  const isSpecificDataLoading =
-    specificDataStatus === 'pending' ||
-    specificDataStatus === 'checking-on-storage';
-
-  return {
-    isSpecificDataLoading,
-    specificAllPokemonData
-  };
+  return {};
 };

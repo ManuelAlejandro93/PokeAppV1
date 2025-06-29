@@ -28,5 +28,4 @@ export type DireccionOrden = 'asc' | 'desc';
 
 export interface PokemonTableProps {
   data: CustomSinglePokemon[];
-  isLoading?: boolean;
 }
