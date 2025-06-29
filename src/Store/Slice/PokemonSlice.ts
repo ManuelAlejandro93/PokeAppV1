@@ -10,6 +10,24 @@ const pokemonAppSlice = createSlice({
   name: 'pokemonAppState',
   initialState: pokemonInitialState,
   reducers: {
+    openPokemonModal: (state, action: PayloadAction<number>) => {
+      const pokemonId = action.payload;
+
+      // Buscamos el pokémon en nuestros datos específicos
+      const pokemon = state.specificData.data?.find(
+        (poke) => poke?.id === pokemonId
+      );
+
+      if (pokemon) {
+        state.modalState.modalContent = pokemon;
+        state.modalState.isModalOpen = true;
+      }
+    },
+
+    closePokemonModal: (state) => {
+      state.modalState.isModalOpen = false;
+    },
+
     onSavedOnLocalStorage(state, action: PayloadAction<CustomSinglePokemon[]>) {
       //Global app state
       state.globalState = {

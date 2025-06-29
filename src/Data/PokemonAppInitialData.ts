@@ -15,6 +15,10 @@ export const pokemonInitialState: PokemonAppState = {
     hasError: false,
     errorMessage: null,
     data: null
+  },
+  modalState: {
+    isModalOpen: false,
+    modalContent: null
   }
 };
 //

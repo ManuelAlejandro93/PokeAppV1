@@ -14,4 +14,8 @@ export interface PokemonAppState {
   specificData: {
     data: null | CustomSinglePokemon[] | Array<null | CustomSinglePokemon>;
   } & Http;
+  modalState: {
+    isModalOpen: boolean;
+    modalContent: CustomSinglePokemon | null;
+  };
 }
