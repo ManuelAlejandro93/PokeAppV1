@@ -1,5 +1,7 @@
-//  Definición de todas las columnas
+import { Dispatch } from '@reduxjs/toolkit';
+import { openPokemonModal } from '@/Store';
 
+//  Definición de todas las columnas
 import { ColumnDef } from '@tanstack/react-table';
 import { Eye } from 'lucide-react';
 import { CustomSinglePokemon } from './Types';
@@ -13,7 +15,8 @@ import {
 // columnas simples
 
 export const obtenerColumnas = (
-  tipoSeleccionado: 'tipo1' | 'tipo2'
+  tipoSeleccionado: 'tipo1' | 'tipo2',
+  dispatch: Dispatch
 ): ColumnDef<CustomSinglePokemon>[] => [
   // COLUMNA 1: Imagen
   {
@@ -181,12 +184,23 @@ export const obtenerColumnas = (
     id: 'ver-mas',
     header: 'Ver Más',
     enableSorting: false, // No se puede ordenar
-    cell: () => (
-      <div className='flex items-center justify-center h-full'>
-        <div className='p-2 hover:opacity-80 cursor-pointer transition-opacity'>
-          <Eye className='w-6 h-6' />
+    cell: ({ row }) => {
+      const pokemonId = row.original.id;
+
+      const handleVerMas = () => {
+        dispatch(openPokemonModal(pokemonId));
+      };
+      return (
+        <div className='flex items-center justify-center h-full'>
+          <button
+            onClick={handleVerMas}
+            className='p-2 hover:opacity-80 cursor-pointer transition-opacity'
+            aria-label={`Ver más detalles de ${row.original.nombre}`}
+          >
+            <Eye className='w-6 h-6' />
+          </button>
         </div>
-      </div>
-    )
+      );
+    }
   }
 ];

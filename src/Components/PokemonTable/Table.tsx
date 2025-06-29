@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useDispatch } from 'react-redux';
 import {
   flexRender,
   getCoreRowModel,
@@ -12,6 +13,9 @@ import { TipoSeleccionado, PokemonTableProps } from './Types';
 import { obtenerColumnas } from './Colums';
 
 export const PokemonTable = ({ data }: PokemonTableProps) => {
+  //Dispatch para pasarle a Columns para que se lo pase a "ver más detalle del pokemon"
+  const dispatch = useDispatch();
+
   // Estado para el ordenamiento (inicia ordenado por ID ascendente)
   const [sorting, setSorting] = useState<SortingState>([
     { id: 'id', desc: false }
@@ -29,8 +33,8 @@ export const PokemonTable = ({ data }: PokemonTableProps) => {
 
   // Obtener las columnas con el tipo seleccionado
   const columnas = useMemo(
-    () => obtenerColumnas(tipoSeleccionado),
-    [tipoSeleccionado]
+    () => obtenerColumnas(tipoSeleccionado, dispatch),
+    [tipoSeleccionado, dispatch]
   );
 
   // Configuración de la tabla
