@@ -9,3 +9,6 @@ export * from './CustomInterfaces';
 
 //Http interfaces
 export * from './Http';
+
+//Components
+export * from './Components';
