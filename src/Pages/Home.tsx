@@ -1,7 +1,12 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '@/Store';
 import { useGetAllPokemonInfoHook } from '@/Hooks';
-import { SkeletonComponent, PokemonTable, Modal } from '@/Components';
+import {
+  SkeletonComponent,
+  PokemonTable,
+  Modal,
+  PokemonGrid
+} from '@/Components';
 import { CustomSinglePokemon } from '@/Interfaces';
 
 export const HomePage = () => {
@@ -18,7 +23,10 @@ export const HomePage = () => {
       {!data || data === null ? (
         <SkeletonComponent />
       ) : (
-        <PokemonTable data={data as CustomSinglePokemon[]} />
+        <>
+          <PokemonTable data={data as CustomSinglePokemon[]} />
+          <PokemonGrid data={data as CustomSinglePokemon[]} />
+        </>
       )}
       <Modal />
     </div>
